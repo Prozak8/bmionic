@@ -1,0 +1,7 @@
+{
+  "name": "bmionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
