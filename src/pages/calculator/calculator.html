@@ -1,9 +1,3 @@
-<!--
-  Generated template for the CalculatorPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -12,8 +6,7 @@
 
 </ion-header>
 
-
-<ion-content padding>
+x <ion-content padding>
   <ion-list>
     <ion-item>
       <ion-label floating>Weight (kg)</ion-label>
@@ -29,4 +22,15 @@
   <div padding>
     <button block ion-button (click)="calculateBMI()">Calculate</button>
   </div>
+
+  <ion-card *ngIf="bmiValue">
+    <ion-card-header>
+      BMI Calculation
+    </ion-card-header>
+    <ion-card-content>
+      <p>Person: Weight {{this.weight}} kg, Height {{this.height}} cm</p>
+      <p>BMI: {{bmiValue}}</p>
+      <p><strong>You are {{bmiMessage}}</strong></p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
