@@ -1,20 +1,20 @@
-import { AboutPage } from "./about";
+import { CalculatorPage } from "./calculator";
 import { TestBed, async } from "@angular/core/testing";
 import { IonicModule, Platform, NavController } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { PlatformMock, StatusBarMock, SplashScreenMock, NavControllerMock } from "ionic-mocks";
 
-describe("AboutPage", () => {
-  let aboutpage;
-  let fixture;
+describe("CalculatorPage", () => {
+  let calculator;
+  let fixture
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AboutPage
+        CalculatorPage
       ],
-      imports: [IonicModule.forRoot(AboutPage)],
+      imports: [IonicModule.forRoot(CalculatorPage)],
       providers: [
         { provide: Platform, useFactory: () => PlatformMock.instance() },
         { provide: StatusBar, useFactory: () => StatusBarMock.instance() },
@@ -25,12 +25,12 @@ describe("AboutPage", () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AboutPage);
-    aboutpage = fixture.componentInstance;
+    fixture = TestBed.createComponent(CalculatorPage);
+    calculator = fixture.componentInstance;
   });
 
-  it("should create the about page", () => {
-    expect(aboutpage).toBeTruthy();
-    expect(aboutpage instanceof AboutPage).toEqual(true);
+  it("should create the calculator page", () => {
+    expect(calculator).toBeTruthy();
+    expect(calculator instanceof CalculatorPage).toEqual(true);
   });
 })
