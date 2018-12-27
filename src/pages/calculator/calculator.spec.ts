@@ -22,16 +22,12 @@ describe("CalculatorPage", () => {
         { provide: NavController, useFactory: () => NavControllerMock.instance() },
         { provide: NavParams, useFactory: () => NavParamsMock.instance() }
       ]
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CalculatorPage);
-    calculator = fixture.componentInstance;
   });
+  fixture = TestBed.createComponent(CalculatorPage);
+  calculator = fixture.componentInstance;
+});
 
-  it("should create the calculator page", () => {
-    expect(calculator).toBeTruthy();
-    expect(calculator instanceof CalculatorPage).toEqual(true);
-  });
-})
+it("should create the calculator page", () => {
+  expect(calculator).toBeTruthy();
+  expect(calculator instanceof CalculatorPage).toEqual(true);
+});
