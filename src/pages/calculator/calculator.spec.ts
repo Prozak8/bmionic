@@ -22,12 +22,23 @@ describe("CalculatorPage", () => {
         { provide: NavController, useFactory: () => NavControllerMock.instance() },
         { provide: NavParams, useFactory: () => NavParamsMock.instance() }
       ]
-  });
-  fixture = TestBed.createComponent(CalculatorPage);
-  calculator = fixture.componentInstance;
-});
+    }).compileComponents();
+  }));
 
-it("should create the calculator page", () => {
-  expect(calculator).toBeTruthy();
-  expect(calculator instanceof CalculatorPage).toEqual(true);
-});
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CalculatorPage);
+    calculator = fixture.componentInstance;
+  });
+
+  it("should create the calculator page", () => {
+    expect(calculator).toBeTruthy();
+    expect(calculator instanceof CalculatorPage).toEqual(true);
+  });
+
+  it('calculate should return obese', () => {
+    calculator.weight = 200
+    calculator.calculateBMI();
+    expect(calculator.bmiValue).toEqual(58.64);
+    expect(calculator.bmiMessage).toEqual('obese')
+  });
+})
