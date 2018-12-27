@@ -36,7 +36,8 @@ describe("CalculatorPage", () => {
   });
 
   it('calculate should return obese', () => {
-    calculator.weight = 200
+    calculator.weight = 200;
+
     calculator.calculateBMI();
     expect(calculator.bmiValue).toEqual(58.64);
     expect(calculator.bmiMessage).toEqual('obese')
